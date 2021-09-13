@@ -3,6 +3,9 @@ body {
   width: 100vw;
   margin: 0;
   padding: 0;
+  font-size: 13px;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-weight: 500;
 }
 
 main {
@@ -11,11 +14,12 @@ main {
   align-items: center;
   height: 100%;
   width: 100%;
+  background-color: hsl(210, 46%, 95%);
 }
 
 .content {
   display: grid;
-  height: 80%;
+  height: 75%;
   width: 80%;
 
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -25,29 +29,247 @@ main {
 
 .cell {
   border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .daniel {
-  background: deepskyblue;
+  background: hsl(263, 55%, 52%);
   grid-row: 1/1;
   grid-column: 1/3;
+  z-index: 1;
 }
 
 .jonathan {
-  background: red;
+  background: hsl(217, 19%, 35%);
 }
 
 .kira {
-  background: royalblue;
+  background: white;
   grid-row: 1 /3;
   grid-column: 4 /4;
 }
 
 .jeanette {
-  background: gold;
+  background: white;
 }
 
 .patrick {
-  background: blueviolet;
+  background: hsl(219, 29%, 14%);
   grid-column: 2/4;
+}
+
+.quote {
+  position: absolute;
+  left: 36%;
+  z-index: -1;
+}
+
+.cell-name {
+  display: flex;
+  padding: 1rem 2rem 0 1.4rem;
+}
+
+.cell-name-image {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.image-container {
+  display: flex;
+  justify-content: flex-start;
+  height: fit-content;
+  width: fit-content;
+  background-color: white;
+  border-radius: 50%;
+  transform: scale(0.6);
+  padding: 1px;
+}
+
+.cell-name-image img {
+  border-radius: 50%;
+}
+
+.cell-name-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0.5px;
+  margin-left: 0.2rem;
+  color: white;
+}
+.verified {
+  opacity: 50%;
+  letter-spacing: 0;
+  font-size: 12px;
+}
+
+.cell-header {
+  padding: 0 2rem;
+  color: white;
+  font-weight: 500;
+  font-size: 17px;
+  z-index: 100;
+}
+
+.cell-header h3 {
+  margin-top: 0;
+  z-index: 100;
+}
+
+.cell-text {
+  padding: 0 2rem;
+  color: white;
+  line-height: 17px;
+}
+
+.cell-text p {
+  opacity: 70%;
+}
+/***************************************************/
+
+.cell-header-inv {
+  padding: 0 2rem;
+  color: black;
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.cell-header-inv h3 {
+  margin-top: 0;
+}
+
+.cell-name-text-inv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 0.5px;
+  margin-left: 0.2rem;
+  color: black;
+}
+
+.cell-text-inv {
+  padding: 0 2rem;
+  color: black;
+  line-height: 18px;
+  opacity: 70%;
+}
+
+@media only screen and (max-width: 1024px) {
+  .content {
+    width: 95%;
+    height: 80%;
+  }
+  .quote {
+    left: 31%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    height: auto;
+  }
+  .content {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.3fr 0.9fr 0.9fr 1.2fr 1.3fr;
+    width: 90%;
+    padding: 3rem 0;
+  }
+  .daniel {
+    grid-row: 1/1;
+    grid-column: 1/4;
+  }
+
+  .jonathan {
+    grid-row: 2/2;
+    grid-column: 1/4;
+  }
+
+  .kira {
+    grid-row: 5/5;
+    grid-column: 1/4;
+  }
+
+  .jeanette {
+    grid-row: 3/3;
+    grid-column: 1/4;
+  }
+
+  .patrick {
+    grid-row: 4/4;
+    grid-column: 1/4;
+  }
+
+  .quote {
+    left: 65%;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  body {
+    height: auto;
+  }
+  .content {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.6fr 0.6fr 1fr 1.1fr;
+    width: 90%;
+    padding: 3rem 0;
+  }
+  .daniel {
+    grid-row: 1/1;
+    grid-column: 1/4;
+  }
+
+  .jonathan {
+    grid-row: 2/2;
+    grid-column: 1/4;
+  }
+
+  .kira {
+    grid-row: 5/5;
+    grid-column: 1/4;
+  }
+
+  .jeanette {
+    grid-row: 3/3;
+    grid-column: 1/4;
+  }
+
+  .patrick {
+    grid-row: 4/4;
+    grid-column: 1/4;
+  }
+
+  .quote {
+    left: 65%;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .quote {
+    left: 60%;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .content {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 75%;
+    height: 75%;
+  }
+
+  .cell-header {
+    font-size: 22px;
+  }
+  .cell-text {
+    font-size: 16px;
+  }
+
+  .cell-header-inv {
+    font-size: 22px;
+  }
+  .cell-text-inv {
+    font-size: 16px;
+  }
 }
